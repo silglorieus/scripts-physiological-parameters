@@ -18,7 +18,7 @@ library(car)
 library(tibble)
 
 # data clean --------------------------------------------------------------
-CPET_RAMP <- read_data("JDK 1/CPET_JDK_01_Colosio_Alessandro_10W_5sec.xlsx", metabolic_cart = "nspire", time_column = "CPET Results")
+CPET_RAMP <- read_data(".xlsx", metabolic_cart = "nspire", time_column = "CPET Results")
 CPET_RAMP <- CPET_RAMP |> rename_with(~ as.character(1:16), everything()) |> 
     dplyr::select(1,4,12) |> 
     rename(time = "1",
